@@ -17,9 +17,15 @@ module.exports = {
             test: /.(js|jsx)$/,
             exclude: /node_module/
         }, {
-            type: "asset",
+            type: "asset/resource",
             test: /\.(png|svg|jpg|jpeg|gif|webp)/i
-        }]
+        },{
+            test: /\.(png|svg|jpg|jpeg|gif|webp)/i,
+            use: {
+                loader: 'url-loader',
+            }
+        }
+    ]
     },
     resolve: {
         extensions: [".js", ".jsx", ".json"]
